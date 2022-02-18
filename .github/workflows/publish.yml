@@ -20,6 +20,10 @@ jobs:
           go-version: '1.16'
       -
         name: Generate new formula
-        if: ${{ github.event.client_payload.cask == 'false' }}
         run: |
-          echo "${{github.event.client_payload.name}} ${{github.event.client_payload.version}} ./util/formula_templater/config.hcl > ./Formula/${{github.event.client_payload.name}}.rb"
+          sleep 10
+          cat /etc/os-release
+          sleep 5
+          echo ${{github.event.client_payload.name}}
+          echo ${{github.event.client_payload.version}}
+      
